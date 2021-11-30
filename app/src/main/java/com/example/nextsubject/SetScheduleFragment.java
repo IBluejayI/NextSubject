@@ -76,16 +76,16 @@ public class SetScheduleFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                RAdapterVS.page = 2;
+                RAdapter.page = 2;
 
                 //nav to schedule
-                NavHostFragment.findNavController(SetScheduleFragment.this)
+                NavHostFragment.findNavController(SetScheduleFragment.this) //ytdfyc
                         .navigate(R.id.action_setScheduleFragment_to_scheduleFragment);
             }
         });
 
         RecyclerView ssRecyclerView = (RecyclerView) view.findViewById(R.id.ssRView);
-        RAdapterSS radapter = new RAdapterSS(getContext());
+        RAdapter radapter = new RAdapter(getContext());
         ssRecyclerView.setAdapter(radapter);
         ssRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.VERTICAL));
     }

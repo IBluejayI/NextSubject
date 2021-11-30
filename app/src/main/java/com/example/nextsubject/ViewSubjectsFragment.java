@@ -58,7 +58,7 @@ public class ViewSubjectsFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        RAdapterVS.page = 0;
+        RAdapter.page = 0;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class ViewSubjectsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                RAdapterVS.page = 1;
+                RAdapter.page = 1;
 
                 //nav set schedule page
                 NavHostFragment.findNavController(ViewSubjectsFragment.this)
@@ -97,7 +97,7 @@ public class ViewSubjectsFragment extends Fragment {
         });
 
         RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.vsRView);
-        RAdapterVS radapter = new RAdapterVS(getContext());
+        RAdapter radapter = new RAdapter(getContext());
         vsRecyclerView.setAdapter(radapter);
         vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

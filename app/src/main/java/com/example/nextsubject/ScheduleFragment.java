@@ -71,7 +71,7 @@ public class ScheduleFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         RecyclerView scRecyclerView = (RecyclerView) view.findViewById(R.id.scRView);
-        RAdapterSC radapter = new RAdapterSC(getContext());
+        RAdapter radapter = new RAdapter(getContext());
         scRecyclerView.setAdapter(radapter);
         scRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.HORIZONTAL));
     }
