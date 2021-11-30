@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,5 +79,10 @@ public class SetScheduleFragment extends Fragment {
                         .navigate(R.id.action_setScheduleFragment_to_scheduleFragment);
             }
         });
+
+        RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.ssRView);
+        RAdapter radapter = new RAdapter();
+        vsRecyclerView.setAdapter(radapter);
+        vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 }

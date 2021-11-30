@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView vsRecyclerView = (RecyclerView) findViewById(R.id.vsRView);
+/*        RecyclerView vsRecyclerView = (RecyclerView) findViewById(R.id.vsRView);
         RAdapter radapter = new RAdapter(this);
         vsRecyclerView.setAdapter(radapter);
         vsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -26,6 +26,6 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView scRecyclerView = (RecyclerView) findViewById(R.id.vsRView);
        // RAdapter radapter = new RAdapter(this);
         scRecyclerView.setAdapter(radapter);
-        scRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        scRecyclerView.setLayoutManager(new LinearLayoutManager(this));*/
     }
 }

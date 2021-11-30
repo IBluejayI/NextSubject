@@ -91,6 +91,10 @@ public class ViewSubjectsFragment extends Fragment {
             }
         });
 
+        RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.vsRView);
+        RAdapter radapter = new RAdapter();
+        vsRecyclerView.setAdapter(radapter);
+        vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
     }
 }

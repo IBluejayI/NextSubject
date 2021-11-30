@@ -15,6 +15,10 @@ import java.util.ArrayList;
 
 public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
+    public RAdapter() {
+
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ConstraintLayout row;
         public TextView subTextView, locTextView;
@@ -55,7 +59,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return subList.size();
+        return 0;
     }
 
 
