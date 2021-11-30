@@ -1,5 +1,7 @@
 package com.example.nextsubject;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +80,15 @@ public class SetScheduleFragment extends Fragment {
             public void onClick(View v) {
 
                 RAdapter.page = 2;
+
+                //Set isNewUser to false
+                MainActivity.isNewUser = 0;
+
+                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt(getString(R.string.is_new_user_key), MainActivity.isNewUser);
+                editor.commit();
+                Log.d("TAG", String.valueOf(MainActivity.isNewUser));
 
                 //nav to schedule
                 NavHostFragment.findNavController(SetScheduleFragment.this) //ytdfyc

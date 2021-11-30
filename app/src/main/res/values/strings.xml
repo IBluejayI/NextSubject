@@ -2,4 +2,5 @@
     <string name="app_name">NextSubject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="is_new_user_key">is_new_user_key</string>
 </resources>
