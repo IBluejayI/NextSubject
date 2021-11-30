@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -72,9 +70,9 @@ public class ScheduleFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.scRView);
-        RAdapter radapter = new RAdapter();
-        vsRecyclerView.setAdapter(radapter);
-        vsRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.HORIZONTAL));
+        RecyclerView scRecyclerView = (RecyclerView) view.findViewById(R.id.scRView);
+        RAdapterSC radapter = new RAdapterSC(getContext());
+        scRecyclerView.setAdapter(radapter);
+        scRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.HORIZONTAL));
     }
 }
