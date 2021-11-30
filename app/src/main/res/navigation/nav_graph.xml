@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewSubjectsFragment">
+
+    <fragment
+        android:id="@+id/addSubjectFragment"
+        android:name="com.example.nextsubject.AddSubjectFragment"
+        android:label="fragment_add_subject"
+        tools:layout="@layout/fragment_add_subject" />
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.example.nextsubject.ScheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/setScheduleFragment"
+        android:name="com.example.nextsubject.SetScheduleFragment"
+        android:label="fragment_set_schedule"
+        tools:layout="@layout/fragment_set_schedule" >
+        <action
+            android:id="@+id/action_setScheduleFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewSubjectsFragment"
+        android:name="com.example.nextsubject.ViewSubjectsFragment"
+        android:label="fragment_view_subjects"
+        tools:layout="@layout/fragment_view_subjects" >
+        <action
+            android:id="@+id/action_viewSubjectsFragment_to_addSubjectFragment"
+            app:destination="@id/addSubjectFragment" />
+        <action
+            android:id="@+id/action_viewSubjectsFragment_to_setScheduleFragment"
+            app:destination="@id/setScheduleFragment" />
+    </fragment>
+</navigation>
