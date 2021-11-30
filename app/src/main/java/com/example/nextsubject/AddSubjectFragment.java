@@ -2,7 +2,9 @@ package com.example.nextsubject;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,31 @@ public class AddSubjectFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_subject, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //Add button click
+        view.findViewById(R.id.asCancelBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //nav to view subjects page with nothing added
+                NavHostFragment.findNavController(AddSubjectFragment.this)
+                        .navigate(R.id.action_addSubjectFragment_to_viewSubjectsFragment);
+            }
+        });
+
+        //Done button click
+        view.findViewById(R.id.asDoneBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //nav set view subjects page with subject added
+                NavHostFragment.findNavController(AddSubjectFragment.this)
+                        .navigate(R.id.action_addSubjectFragment_to_viewSubjectsFragment);
+            }
+        });
     }
 }

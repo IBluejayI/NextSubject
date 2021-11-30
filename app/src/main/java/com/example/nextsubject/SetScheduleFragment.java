@@ -2,7 +2,9 @@ package com.example.nextsubject;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,20 @@ public class SetScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_set_schedule, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //Done button click
+        view.findViewById(R.id.ssDoneBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //nav set view subjects page with subject added
+                NavHostFragment.findNavController(SetScheduleFragment.this)
+                        .navigate(R.id.action_setScheduleFragment_to_scheduleFragment);
+            }
+        });
     }
 }
