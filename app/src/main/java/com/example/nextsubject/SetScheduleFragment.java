@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,8 @@ public class SetScheduleFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+//        RAdapter.page = 1;
     }
 
     @Override
@@ -74,7 +77,9 @@ public class SetScheduleFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //nav set view subjects page with subject added
+                RAdapter.page = 2;
+
+                //nav to schedule
                 NavHostFragment.findNavController(SetScheduleFragment.this)
                         .navigate(R.id.action_setScheduleFragment_to_scheduleFragment);
             }
@@ -83,6 +88,6 @@ public class SetScheduleFragment extends Fragment {
         RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.ssRView);
         RAdapter radapter = new RAdapter();
         vsRecyclerView.setAdapter(radapter);
-        vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        vsRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.HORIZONTAL));
     }
 }

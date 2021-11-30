@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,8 @@ public class ScheduleFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        //RAdapter.page = 2;
     }
 
     @Override
@@ -72,6 +75,6 @@ public class ScheduleFragment extends Fragment {
         RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.scRView);
         RAdapter radapter = new RAdapter();
         vsRecyclerView.setAdapter(radapter);
-        vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        vsRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.HORIZONTAL));
     }
 }

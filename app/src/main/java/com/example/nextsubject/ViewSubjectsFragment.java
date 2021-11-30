@@ -57,6 +57,8 @@ public class ViewSubjectsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        RAdapter.page = 0;
     }
 
     @Override
@@ -64,6 +66,7 @@ public class ViewSubjectsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_view_subjects, container, false);
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -85,16 +88,18 @@ public class ViewSubjectsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                RAdapter.page = 1;
+
                 //nav set schedule page
                 NavHostFragment.findNavController(ViewSubjectsFragment.this)
                         .navigate(R.id.action_viewSubjectsFragment_to_setScheduleFragment);
             }
         });
 
-        RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.vsRView);
+/*        RecyclerView vsRecyclerView = (RecyclerView) view.findViewById(R.id.vsRView);
         RAdapter radapter = new RAdapter();
         vsRecyclerView.setAdapter(radapter);
-        vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        vsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));*/
 
     }
 }

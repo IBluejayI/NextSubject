@@ -14,18 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 /*        RecyclerView vsRecyclerView = (RecyclerView) findViewById(R.id.vsRView);
-        RAdapter radapter = new RAdapter(this);
+        RAdapter radapter = new RAdapter();
         vsRecyclerView.setAdapter(radapter);
-        vsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        vsRecyclerView.setLayoutManager(new LinearLayoutManager(this));*/
 
-        RecyclerView ssRecyclerView = (RecyclerView) findViewById(R.id.vsRView);
-        //RAdapter radapter = new RAdapter(this);
-        ssRecyclerView.setAdapter(radapter);
-        ssRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        RecyclerView scRecyclerView = (RecyclerView) findViewById(R.id.vsRView);
-       // RAdapter radapter = new RAdapter(this);
-        scRecyclerView.setAdapter(radapter);
-        scRecyclerView.setLayoutManager(new LinearLayoutManager(this));*/
     }
 }
