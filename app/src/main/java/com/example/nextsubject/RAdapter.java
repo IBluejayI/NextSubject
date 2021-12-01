@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static com.example.nextsubject.MainActivity.subList;
+
 public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
     public static int page; //0 - view subjects, 1 - set schedule, 2 - schedule
@@ -45,26 +47,13 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
         }
     }
 
-    public ArrayList<String> subList;
-    int arrSize = 0;
+    //
+
     public ArrayAdapter<String> adapter;
 
     public RAdapter(Context c) {
-        subList = new ArrayList<String>();
-        subList.add("None");
-/*        subList.add("2");
-        subList.add("3");
-        subList.add("4");
-        subList.add("5");
-        subList.add("6");
-        subList.add("7");
-        subList.add("8");
-        subList.add("9");
-        subList.add("10");
-        subList.add("11");
-        subList.add("12");*/
-
-        arrSize = subList.size();
+//        subList = new ArrayList<String>();
+        //subList.add("None");
 
         adapter =
                 new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, subList);
@@ -139,7 +128,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         //int size = subList.size();
-        return arrSize;
+        return subList.size();
     }
 
 

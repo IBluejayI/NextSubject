@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,6 +83,10 @@ public class AddSubjectFragment extends Fragment {
         view.findViewById(R.id.asDoneBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText editText = view.findViewById(R.id.asSubInput);
+                String toAdd = String.valueOf(editText.getText());
+
+                MainActivity.subList.add(toAdd);
 
                 //nav set view subjects page with subject added
                 NavHostFragment.findNavController(AddSubjectFragment.this)

@@ -9,9 +9,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     public static int isNewUser; //1 = new, 0 = not
+    public static ArrayList<String> subList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +26,7 @@ public class MainActivity extends AppCompatActivity {
         isNewUser= sharedPref.getInt(getString(R.string.is_new_user_key), defaultValue);
         Log.d("TAG", String.valueOf(isNewUser));
 
+        subList = new ArrayList<String>();
+        subList.add("None");
     }
 }
