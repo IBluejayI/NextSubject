@@ -21,7 +21,7 @@ public interface ScheduleDao {
     LiveData<List<Schedule>> getFromDay(int selectedDay);
 
     @Query("SELECT * FROM schedule_table")
-    LiveData<List<Schedule>> getAll();
+    LiveData<List<Schedule>> getAllSchedule();
 
 
 }

@@ -18,12 +18,12 @@ public class ScheduleRepository {
     ScheduleRepository(Application application) {
         ScheduleRoomDatabase db = ScheduleRoomDatabase.getDatabase(application);
         mScheduleDao = db.scheduleDao();
-        mAllSchedule = mScheduleDao.getAll();
+        mAllSchedule = mScheduleDao.getAllSchedule();
     }
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    LiveData<List<Schedule>> getAllWords() {
+    LiveData<List<Schedule>> getAllSchedule() {
         return mAllSchedule;
     }
 
