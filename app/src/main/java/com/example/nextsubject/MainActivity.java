@@ -28,5 +28,37 @@ public class MainActivity extends AppCompatActivity {
 
         subList = new ArrayList<String>();
         subList.add("None");
+        subList.add("1");
+        subList.add("2");
+        subList.add("3");
+        subList.add("4");
+        subList.add("5");
+        subList.add("6");
+        subList.add("7");
+        subList.add("8");
+        subList.add("9");
+        subList.add("10");
+        subList.add("11");
+        subList.add("12");
+        subList.add("13");
+        subList.add("14");
+        subList.add("15");
+        subList.add("16");
+        subList.add("1");
+        subList.add("2");
+        subList.add("3");
+        subList.add("4");
+        subList.add("5");
+        subList.add("6");
+        subList.add("7");
+        subList.add("8");
+        subList.add("9");
+        subList.add("10");
+        subList.add("11");
+        subList.add("12");
+        subList.add("13");
+        subList.add("14");
+        subList.add("15");
+        subList.add("16");
     }
 }
