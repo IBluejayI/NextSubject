@@ -25,7 +25,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
     public static int page; //0 - view subjects, 1 - set schedule, 2 - schedule
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public ConstraintLayout row, addCell, cell;
+        public ConstraintLayout row, addCell, cell, col;
         public TextView subTextView, cSubTextView, cLocTextView;
         public EditText locEdtText;
         public Spinner subSpinner;
@@ -36,6 +36,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
             row = (ConstraintLayout) itemView.findViewById(R.id.a_row);
             addCell = (ConstraintLayout) itemView.findViewById(R.id.an_add_cell);
             cell = (ConstraintLayout) itemView.findViewById(R.id.a_cell);
+            col = (ConstraintLayout) itemView.findViewById(R.id.a_col);
 
             subTextView = (TextView) itemView.findViewById(R.id.sub_text);
             cSubTextView = (TextView) itemView.findViewById(R.id.cSubText);
@@ -118,17 +119,21 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
             case 2:
                 TextView textViewSub = holder.cSubTextView;
-                textViewSub.setText(subList.get(position));
+                textViewSub.setText(position);
 
                 TextView textViewLoc = holder.cLocTextView;
-                textViewLoc.setText(subList.get(position));
+                textViewLoc.setText(position);
         }
     }
 
     @Override
     public int getItemCount() {
+        int ret = 10;
+
+        if (page == 0)
+            ret = subList.size();
         //int size = subList.size();
-        return subList.size();
+        return ret;
     }
 
 

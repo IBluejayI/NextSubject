@@ -20,12 +20,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.95" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ssRView"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:scrollbars="horizontal|vertical"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/ssDoneBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,6 +31,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ssRView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="24dp"
+            android:scrollbars="horizontal|vertical">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
