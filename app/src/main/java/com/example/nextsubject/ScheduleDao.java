@@ -9,7 +9,7 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface ScheduleDAO {
+public interface ScheduleDao {
     @Insert (onConflict = OnConflictStrategy.IGNORE)
     void insert (Schedule schedule);
 
@@ -19,6 +19,9 @@ public interface ScheduleDAO {
     //gives list with the selected day's schedule (I hope)
     @Query("SELECT * FROM schedule_table WHERE day = :selectedDay")
     LiveData<List<Schedule>> getFromDay(int selectedDay);
+
+    @Query("SELECT * FROM schedule_table")
+    LiveData<List<Schedule>> getAll();
 
 
 }

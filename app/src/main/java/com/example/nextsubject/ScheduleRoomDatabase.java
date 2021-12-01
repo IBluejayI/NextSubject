@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 @Database(entities = {Schedule.class}, version = 1, exportSchema = false)
 public abstract class ScheduleRoomDatabase extends RoomDatabase {
 
-    public abstract ScheduleDAO scheduleDAO();
+    public abstract ScheduleDao scheduleDao();
 
     private static volatile ScheduleRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
