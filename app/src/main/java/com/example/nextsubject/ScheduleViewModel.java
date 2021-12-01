@@ -22,4 +22,8 @@ public class ScheduleViewModel extends AndroidViewModel {
     LiveData<List<Schedule>> getAllSchedule() { return mAllSchedule; }
 
     public void insert(Schedule schedule) { mRepository.insert(schedule); }
+
+    LiveData<List<Schedule>> getFromDay(int day) {
+        return mRepository.getFromDay(day);
+    }
 }

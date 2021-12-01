@@ -11,6 +11,7 @@ public class ScheduleRepository {
     private ScheduleDao mScheduleDao;
     private LiveData<List<Schedule>> mAllSchedule;
 
+
     // Note that in order to unit test the WordRepository, you have to remove the Application
     // dependency. This adds complexity and much more code, and this sample is not about testing.
     // See the BasicSample in the android-architecture-components repository at
@@ -33,5 +34,9 @@ public class ScheduleRepository {
         ScheduleRoomDatabase.databaseWriteExecutor.execute(() -> {
             mScheduleDao.insert(schedule);
         });
+    }
+
+    LiveData<List<Schedule>> getFromDay(int day) {
+        return mScheduleDao.getFromDay(day);
     }
 }

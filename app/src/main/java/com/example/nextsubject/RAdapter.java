@@ -4,9 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -43,11 +47,12 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
     public ArrayList<String> subList;
     int arrSize = 0;
+    public ArrayAdapter<String> adapter;
 
     public RAdapter(Context c) {
         subList = new ArrayList<String>();
-        subList.add("1");
-        subList.add("2");
+        subList.add("None");
+/*        subList.add("2");
         subList.add("3");
         subList.add("4");
         subList.add("5");
@@ -57,9 +62,12 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
         subList.add("9");
         subList.add("10");
         subList.add("11");
-        subList.add("12");
+        subList.add("12");*/
 
         arrSize = subList.size();
+
+        adapter =
+                new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, subList);
     }
 
     @NonNull
@@ -94,6 +102,28 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
             case 1:
                 Spinner spinner = holder.subSpinner;
+                spinner.setAdapter(adapter);
+
+/*                ArrayAdapter<String> adapter =
+                        new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, subList);*/
+
+
+
+
+/*                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subList);
+                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(arrayAdapter);
+                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        string tutorialsName = parent.getItemAtPosition(position).toString();
+                        Toast.makeText(parent.getContext(), "Selected: " + tutorialsName,          Toast.LENGTH_LONG).show();
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });*/
+
                 EditText editText = holder.locEdtText;
                 break;
 

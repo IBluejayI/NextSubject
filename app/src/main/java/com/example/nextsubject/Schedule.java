@@ -7,70 +7,71 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "schedule_table")
 public class Schedule {
+
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "pkey")
-    private int sPKey;
+    private int mPKey;
 
     @ColumnInfo(name = "day")
-    private int sDay;
+    private int mDay;
 
     @ColumnInfo(name = "time")
-    private int sTime;
+    private int mTime;
 
     @ColumnInfo(name = "subject")
-    private String sSubject;
+    private String mSubject;
 
     @ColumnInfo(name = "location")
-    private String sLocation;
+    private String mLocation;
 
     public Schedule(@NonNull int pKey, int day, int time, String subject, String location)
     {
-        this.sPKey = pKey;
-        this.sDay = day;
-        this.sTime = time;
-        this.sSubject = subject;
-        this.sLocation = location;
+        this.mPKey = pKey;
+        this.mDay = day;
+        this.mTime = time;
+        this.mSubject = subject;
+        this.mLocation = location;
     }
 
     public int getPKey() {
-        return this.sPKey;
+        return this.mPKey;
     }
 
     public int getDay() {
-        return this.sDay;
+        return this.mDay;
     }
 
     public int getTime() {
-        return this.sTime;
+        return this.mTime;
     }
 
     public String getSubject() {
-        return this.sSubject;
+        return this.mSubject;
     }
 
     public String getLocation() {
-        return this.sLocation;
+        return this.mLocation;
     }
 
 
-    public void setsPKey(int sPKey) {
-        this.sPKey = sPKey;
+    public void setpKey(int pKey) {
+        this.mPKey = pKey;
     }
 
-    public void setsDay(int sDay) {
-        this.sDay = sDay;
+    public void setDay(int day) {
+        this.mDay = day;
     }
 
-    public void setsTime(int sTime) {
-        this.sTime = sTime;
+    public void setmTime(int mTime) {
+        this.mTime = mTime;
     }
 
-    public void setsSubject(String sSubject) {
-        this.sSubject = sSubject;
+    public void setmSubject(String mSubject) {
+        this.mSubject = mSubject;
     }
 
-    public void setsLocation(String sLocation) {
-        this.sLocation = sLocation;
+    public void setmLocation(String mLocation) {
+        this.mLocation = mLocation;
     }
 }
